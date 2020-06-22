@@ -10,8 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var mybutton = findViewById<Button>(R.id.button)
+        var yourbutton = findViewById<Button>(R.id.button2)
         mybutton.setOnClickListener {
             Toast.makeText(this, "Button Clicked", Toast.LENGTH_LONG).show()
+        }
+        yourbutton.setOnClickListener {
+            Toast.makeText(this, "Hello you", Toast.LENGTH_LONG).show()
         }
     }
 }
