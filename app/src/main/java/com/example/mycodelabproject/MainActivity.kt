@@ -3,19 +3,35 @@ package com.example.mycodelabproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    lateinit var value: TextView
+    lateinit var decrease: Button
+    lateinit var increase: Button
+    var counter = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var mybutton = findViewById<Button>(R.id.button)
-        var yourbutton = findViewById<Button>(R.id.button2)
-        mybutton.setOnClickListener {
-            Toast.makeText(this, "Button Clicked", Toast.LENGTH_LONG).show()
+        value = findViewById(R.id.textView)
+        decrease = findViewById(R.id.button)
+        increase = findViewById(R.id.button2)
+
+        decrease.setOnClickListener {
+            counter += 1
+            value.text = counter.toString()
         }
-        yourbutton.setOnClickListener {
-            Toast.makeText(this, "Hello you", Toast.LENGTH_LONG).show()
+
+        increase.setOnClickListener {
+            counter -= 1
+            value.text = counter.toString()
         }
     }
+
 }
+
+
+
+
